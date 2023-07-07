@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.bd {
+    background-image: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8)) image("..Image/h1.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.register {
+    width: 400px;
+    background-color: #fff;
+    margin: 100px auto;
+    border-radius: 9px;
+}
+
+.register h1 {
+    text-align: center;
+    background-color: rgba(0, 0, 90, 0.8);
+    padding-bottom: 19px;
+    padding-top: 13px;
+    color: #fff;
+}
+
+.register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.input {
+    width: 300px;
+    height: 50%;
+    padding: 13px;
+    margin: 5px;
+}
+
+.btn {
+    background-color: #009;
+    color: #fff;
+    font-size: large;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 10px;
+    padding: 13px;
+    margin: 10px;
+    border: none;
+}
+
+.dot {
+    display: block;
+}
+
+
+/* scc for log in form from here */
+
+.field {
+    width: 300px;
+    height: 50%;
+    padding: 13px;
+    margin: 5px;
+}
+
+.new {
+    width: 300px;
+    height: 50%;
+}
+
+.reg_link {
+    width: 300px;
+    height: 50%;
+}
+
+
+/* for home page */
+
+.mtl {
+    text-align: center;
+}
+
+header {
+    height: 100vh;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+
+ul li a:hover {
+    background-color: #009;
+}
+
+#image {
+    background-size: cover;
+}
