@@ -17,8 +17,8 @@ if(isset($_POST['submit'])){
      VALUES (:vName,:tel,:email,:price,:capacity,:locat,:services,:descr,'default')");
     $stmt->execute(array(":vName" => $name, ":tel" => $phone, ":email" => $email, ":price" => $price, ":capacity" => $capacity, ":locat" => $location, ":services" => $service, ":descr" => $descrip));
     $Id = $conn->lastInsertId(); 
-    // wahat is that
-    header("location: ../Admin/allVenue.php");
+    
+    
 }
 session_start();
 
@@ -38,6 +38,6 @@ if (isset($_FILES["image"])) {
         }
     }
 }
-header("location: ../Admin/allVenue.php");
+header("location: ../admin/venueManager.php");
 
 ?>

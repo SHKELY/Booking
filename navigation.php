@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="About.php" class="nav-link">
                     <span class="mr-2 d-lg-inline text-gray small toptext">About</span>
                     </a>
                 </li>

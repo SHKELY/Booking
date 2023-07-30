@@ -18,6 +18,7 @@ if (isset($_POST['login'])) {
             session_start();
             $_SESSION['user'] = $data['Email'];
             $_SESSION['role'] = $data['roleName'];
+            $_SESSION['id']  = $data['userID'];
 
             if ($_SESSION['role'] == 'admin') {
                 header('Location: ../Admin/index.php');
@@ -32,9 +33,8 @@ if (isset($_POST['login'])) {
             echo $_SESSION['user'];
         }else{
             {
-                $_SESSION['loginerror'] = "Wrong input!";
-                echo  "<script>alert('Wrong user Name or Password ')</script>";
-                header("location: ../login.php");
+               
+                header("location: ../login.php?error=booked");
                 
 		
             }  

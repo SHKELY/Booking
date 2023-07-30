@@ -1,5 +1,7 @@
 <?php
-session_start();
+// session_start();
+// $user = $_SESSION['user'];
+// $role = $_SESSION['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

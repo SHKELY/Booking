@@ -19,6 +19,8 @@ session_start();
     <link href="css/bootsrtap1.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/logFormScript.js"></script>
+    <link rel="stylesheet" href="Asset/css/bootstrap.css">
+    <link rel="stylesheet" href="Asset/css/style.css">
 
 </head>
 
@@ -35,6 +37,14 @@ session_start();
                                 <h1 class="h4 text-gray-900 mb-4 dispalay-3">Login</h1>
                                 <hr>
                             </div>
+                            <?php
+                                if(isset($_GET['error']) && $_GET['error'] == "booked"){
+                                    echo '<div class="alert alert-danger">
+                                    Wrong username or password!
+                                    </div>';
+                   
+                                     }
+                            ?>
                             <form class="user" name="form" id="form_login" action="./Handler/loginHandler.php" method="POST" onsubmit="return ValidateForm()">
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="email" name="email" onsubmit="return ValidateForm()"
@@ -62,12 +72,7 @@ session_start();
                                         </div>
                                         <hr>                    
                                     </form>
-                                    <?php if (isset($_SESSION['loginerror'])) { ?>
-                                        <div class="errormessage">
-                                         <p><?php echo $_SESSION['loginerror'] ?></p>
-                                        </div>
-
-                                    <?php } ?>
+                                
                     
                                     <div class="text-center">
                                         <a class="small text-dark" href="register.php">Create an Account!</a>
@@ -95,8 +100,9 @@ session_start();
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <?php
+    include('include/scripts.php');
+    ?>
 
 </body>
 

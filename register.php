@@ -14,6 +14,8 @@
     <link href="css/bootsrtap1.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/logFormScript.js"></script>
+    <link rel="stylesheet" href="Asset/css/bootstrap.css">
+    <link rel="stylesheet" href="Asset/css/style.css">
 
 </head>
 
@@ -31,6 +33,14 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account</h1>
                                 <hr>
                             </div>
+                            <?php
+                                if(isset($_GET['error']) && $_GET['error'] == 'true'){
+                                    echo '<div class="alert alert-danger">
+                                    Email Already Exist!
+                                    </div>';
+                   
+                                     }
+                            ?>
                             <form class="user" name="form" id="form_register" action="./Handler/registerHandler.php" method="post" onsubmit="return ValidationForm()">
                                 <div class="form-group">
                                     <input type="name" class="form-control form-control-user" id="name" onkeyup="ValidateName()" name="name"
@@ -82,21 +92,6 @@
         </div>
     </div>
     </div>
-
-
-
-
-
-
-
-
-  
-    <!-- <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
-
 </body>
 
 </html>

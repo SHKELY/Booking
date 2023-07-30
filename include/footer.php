@@ -6,7 +6,7 @@
         <div class="col-md-4">
           <h4>Company Information</h4>
           <ul class="list-unstyled">
-            <li><a href="#">About Us</a></li>
+            <li><a href="About.php">About Us</a></li>
             <li><a href="#">Terms and Conditions</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>

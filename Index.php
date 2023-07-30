@@ -1,5 +1,6 @@
 <?php
 	require_once('Handler/connection.php');
+    session_start();
 ?>
 
    
@@ -67,9 +68,6 @@ include('include/topbar.php');
 		?>
 			
 			</div>
-<!-- test card -->
-
-<!-- up to here -->
             </div>
 
 

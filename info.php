@@ -1,5 +1,6 @@
 <?php
 require_once("./Handler/connection.php");
+session_start();
 if (isset($_GET['id'])) {
 	$id = $_GET['id'];
 	$stmt = $conn->prepare("SELECT * FROM `venue` WHERE `venueID` = :id");
@@ -44,7 +45,7 @@ if (isset($_GET['id'])) {
 						</tr>
 						<tr>
 							<th><i class="fas fa-credit-card"> Cost</th>
-							<td>Tsh<?php echo $res['Price'] ?></td>
+							<td>Tsh <?php echo number_format( $res['Price']) ?>/=</td>
 						</tr>
 						<tr>
 							<th><i class="fas fa-users"></i> Capacity</th>

@@ -24,7 +24,7 @@
 
 
     include('../Handler/connection.php');
-    $stmt = $conn->prepare("SELECT * FROM booking_t, cutomers, venue, payment WHERE booking_t.customerId = cutomers.customerId AND booking_t.VenueId = venue.VenueId and booking_t.BookingId = payment.BookingId");
+    $stmt = $conn->prepare("SELECT * FROM booking_t, cutomers, venue WHERE booking_t.customerId = cutomers.customerId AND booking_t.VenueId = venue.VenueId");
     $stmt->execute();
     
     ?>
@@ -32,25 +32,40 @@
                 <div class="container-fluid">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <h1 class="h2 text-dark bold text-left">Your Booking History</h1>
+                        <h1 class="h2 text-dark bold text-left">Report</h1>
                         </div>
+                        <div class="col-md-4 d-flex align-items-end">
+                <button type="button" class="btn btn-secondary mybg ms-2" onclick="printReport()">Print Report</button>
+            </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>SN</th>
                                             <th>Customer Name</th>
                                             <th>Hall Name</th>
                                             <th>Date</th>
-                                            <th>Phone</th>
-                                            <th>Reference_no</th>
+                                            <th>S_Time</th>
+                                            <th>E_Time</th>
                                             <th>Type of Service</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Price</th>
+                                          
                                         </tr>
                                     </thead>
-                                
+                                    <tfoot>
+                                    <tr>
+                                            <th>SN</th>
+                                            <th>Customer Name</th>
+                                            <th>Hall Name</th>
+                                            <th>Date</th>
+                                            <th>S_Time</th>
+                                            <th>E_Time</th>
+                                            <th>Type of Service</th>
+                                            <th>Price</th>
+                                           
+                                        </tr>
+                                    </tfoot>
                                     <tbody>
                                         <?php
                                             $sn = 1;
@@ -61,38 +76,16 @@
                                         <tr>
                                             <td><?php echo $sn?></td>
                                             <td><?php echo $show['fullName']?></td>
-                                            <td><h6><?php echo $show['v_Name']?></h6>
-                                            <small>Tsh <?php echo number_format( $show['Price'])?></small> </td>
+                                            <td><?php echo $show['v_Name']?></td>
                                             <td><?php echo $show['Date']?></td>
-                                            <td><?php echo $show['Phone']?></td>
-                                            <td><?php echo $show['reference_no']?></td>
+                                            <td><?php echo $show['S_time']?></td>
+                                            <td><?php echo $show['E_time']?></td>
                                             <td><?php echo $show['service_type']?></td>
-                                            <td>
-                                            <?php
-                                            if($show['status'] == 0){
-                                                echo "Pending";
-                                            }else{
-                                                echo "Comfirmed";
-
-                                             }
-                                             ?>
-                                            </td>
-                                                <?php
-                                            if($show['status'] == 0){
-                                                ?>
-                                                <td><a href="../Handler/allBookingHandler.php?confirm=<?php echo $show['BookingId']?>" class="btn btn-sm btn-success">Confirm</a></td>
-                                            <?php }else{?>
-                                                <td><a href="../Handler/allBookingHandler.php?cencel=<?php echo $show['BookingId']?>" class="btn btn-sm btn-danger">Cancel</a></td>
-                                            <?php }?>
+                                            <td>Tsh <?php echo number_format( $show['Price'])?></td>
                                             
-                                            
-                                         
-                                          
                                         </tr>
 
-                                        
-
-                                        
+                                                                      
                             </div>
                                       
                                         <?php $sn++;
@@ -128,6 +121,12 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+    <script>
+         function printReport() {
+            // Trigger the browser's print dialog to print the report content
+            window.print();
+        }
+    </script>
 </body>
 <?php include('../include/Adminscript.php');
 include('../include/Adminfooter.php');?>

@@ -43,7 +43,7 @@
             <span>Customers</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="report.php">
             <i class="fas fa-fw fa-briefcase"></i>
             <span>Venue Report</span></a>
     </li>
