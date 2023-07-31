@@ -79,9 +79,7 @@
 
 
 
-    <?php include('../include/Adminscript.php');
-include('../include/Adminfooter.php');?>
-             
+  
 
 </footer>
         

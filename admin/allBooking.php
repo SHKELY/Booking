@@ -60,7 +60,8 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $sn?></td>
-                                            <td><?php echo $show['fullName']?></td>
+                                            <td><h6><?php echo $show['name']?></h6>
+                                             <small><?php echo $show['fullName']?></small></td>
                                             <td><h6><?php echo $show['v_Name']?></h6>
                                             <small>Tsh <?php echo number_format( $show['Price'])?></small> </td>
                                             <td><?php echo $show['Date']?></td>

@@ -75,7 +75,8 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $sn?></td>
-                                            <td><?php echo $show['fullName']?></td>
+                                            <td><h6><?php echo $show['name']?></h6>
+                                             <small><?php echo $show['fullName']?></small></td>
                                             <td><?php echo $show['v_Name']?></td>
                                             <td><?php echo $show['Date']?></td>
                                             <td><?php echo $show['S_time']?></td>

@@ -92,6 +92,7 @@
       </div>
     </div>
   </section>
+  <link rel="stylesheet" href="Asset/js/bootstrap.js">
   <!-- Footer -->
   <?php
  include('include/footer.php');

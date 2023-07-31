@@ -16,7 +16,7 @@
 
             
                 <li class="nav-item">
-                    <a href="Index.php" class="nav-link">
+                    <a href="index.php" class="nav-link">
                     <span class="mr-2 d-lg-inline text-gray small toptext">Home</span>
                     </a>
                 </li>

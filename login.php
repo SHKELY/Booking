@@ -40,7 +40,7 @@ session_start();
                             <?php
                                 if(isset($_GET['error']) && $_GET['error'] == "booked"){
                                     echo '<div class="alert alert-danger">
-                                    Wrong username or password!
+                                    Wrong Email or password!
                                     </div>';
                    
                                      }
@@ -59,13 +59,8 @@ session_start();
                                 </div>
 
                                 
-                            <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
+                            <div class="form-group mt-5">
+                                            
                                         
                                         <div class="container justify-content-center d-flex">
                                        <button type="submit" name="login" class="btn mybg btn-warning w-100">Login</button>

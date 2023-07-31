@@ -4,6 +4,11 @@ require_once("./Handler/connection.php");
 session_start();
 $user = $_SESSION['user'];
 $role = $_SESSION['role'];
+
+    if(!isset($role)){
+        header('location: ../login.php');
+    }
+    
 if (isset($_POST['submit'])) {
 
     $cusId = $_POST['cusID'];

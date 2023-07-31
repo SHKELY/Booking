@@ -4,6 +4,10 @@ session_start();
 $user = $_SESSION['user'];
 $role = $_SESSION['role'];
 
+    if(!isset($role)){
+        header('location: ../login.php');
+    }
+
 if(isset($_POST['submit'])){
     $bookingID = $_SESSION['bookingID'];
     $refNo = $_POST['referenceNumber'];
@@ -47,7 +51,7 @@ include('include/topbar.php');
                     <hr>
                     <form action="payment.php" method="post">
                         <label for="referenceNumber">Enter reference number:</label>
-                        <input type="text" class="form-control" name="referenceNumber" id="referenceNumber" maxlength="11" pattern="[0-9]{11}" placeholder="Enter reference number">
+                        <input type="text" class="form-control" name="referenceNumber" id="referenceNumber" maxlength="11" pattern="[0-9]{11}" placeholder="Enter reference number" required>
                         <button type="submit" name="submit" class="btn btn-success mt-2" onclick="submitPayment()">Submit Payment</button>
                     </form>
                 </div>

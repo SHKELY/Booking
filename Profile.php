@@ -31,7 +31,13 @@ include('include/header.php');
 						<?php
 						require_once("./Handler/connection.php");
 						
-							// session_start();
+							session_start();
+							$user = $_SESSION['user'];
+$role = $_SESSION['role'];
+
+    if(!isset($role)){
+        header('location: ../login.php');
+    }
 							$id = $_SESSION['id'];
 							// echo $id;
 							$query = $conn->prepare("SELECT * FROM cutomers,users,roles WHERE users.userID=cutomers.userId AND users.roleID=roles.roleID AND users.userID=:userID");
